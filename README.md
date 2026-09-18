@@ -4,10 +4,8 @@ A responsive single-page personal portfolio website for **Amna Pervez**, a BS Co
 ​
 ## Live Website
 ​
-Add the GitHub Pages URL here after deployment:
-​
-`https://YOUR-USERNAME.github.io/tsg-webdev-p01-amna-pervez/`
-​
+https://amnapervez8910.github.io/tsg-webdev-p01-amna-pervez/
+
 ## Features
 ​
 - Responsive navigation with smooth scrolling
