@@ -41,16 +41,9 @@ https://amnapervez8910.github.io/tsg-webdev-p01-amna-pervez/
 └── README.md
 ```
 ​
-## Run Locally
-​
-1. Download or clone this repository.
-2. Keep `index.html`, `styles.css`, `script.js`, and `resume.pdf` in the same folder.
-3. Open `index.html` in a browser, or use the VS Code Live Server extension.
-4. Click **Download CV** to download the included resume PDF.
 ​
 ## Screenshots
 ​
-Add the required screenshots here after creating them:
 ​
 ### Mobile View
 ​
