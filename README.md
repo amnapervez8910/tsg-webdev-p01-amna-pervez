@@ -30,14 +30,19 @@ https://amnapervez8910.github.io/tsg-webdev-p01-amna-pervez/
 - GitHub Pages
 ​
 ## Project Structure
-​
+
 ```text
 .
 ├── index.html
 ├── styles.css
 ├── script.js
 ├── resume.pdf
-└── README.md
+├── README.md
+└── screenshots/
+    ├── mobile.png
+    ├── tablet.png
+    └── desktop.png
+​
 ```
 ​
 ## Screenshots
