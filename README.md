@@ -3,9 +3,8 @@
 A responsive single-page personal portfolio website for **Amna Pervez**, a BS Computer Science student and developer.
 ​
 ## Live Website
+https://amnapervez8910.github.io/tsg-webdev-p01-amna-pervez/
 
-`https://amnapervez8910.github.io/tsg-webdev-p01-amna-pervez/`
-​
 ## Features
 ​
 - Responsive navigation with smooth scrolling
