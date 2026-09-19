@@ -1591,6 +1591,53 @@ footer::before{
   }
 }
 
+/* ============================================================
+   MOBILE PERFORMANCE
+   Keep the visual style, but reduce expensive effects on phones.
+   ============================================================ */
+@media(max-width:768px){
+  .morph-blob{
+    animation:none;
+    filter:blur(70px);
+  }
+  .stars{
+    animation:none;
+    opacity:.45;
+  }
+  .noise{
+    display:none;
+  }
+  .nav,
+  .nav-menu,
+  .float-card,
+  .about-stat,
+  .skill-card,
+  .tool-card,
+  .learn-card,
+  .project,
+  .edu-item,
+  .contact-card,
+  .form,
+  .report-dialog{
+    -webkit-backdrop-filter:none;
+    backdrop-filter:none;
+  }
+  .avatar-ring,
+  .avatar-ring.rev,
+  .avatar-blob,
+  .float-card,
+  .scroll-bubble{
+    animation:none;
+  }
+  .project:hover,
+  .project:hover .project-img img{
+    transform:none;
+  }
+  .project::after{
+    display:none;
+  }
+}
+
 
 /* PROJECT REPORT MODAL */
 .project-report-btn{font:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:left}

@@ -1,10 +1,10 @@
 /* ============================================================
    LOADER
    ============================================================ */
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => {
     document.getElementById('loader').classList.add('done');
-  }, 2400);
+  }, 650);
 });
 
 /* ============================================================
@@ -14,14 +14,22 @@ const nav = document.getElementById('nav');
 const burger = document.getElementById('burger');
 const navMenu = document.getElementById('navMenu');
 const burgerIcon = burger.querySelector('i');
+const sections = [...document.querySelectorAll('section[id]')];
+const navLinks = [...document.querySelectorAll('.nav-link')];
+let scrollTicking = false;
 
 window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 40);
-  document.getElementById('toTop').classList.toggle('show', window.scrollY > 500);
-  updateActiveLink();
+  if (scrollTicking) return;
+  scrollTicking = true;
+  requestAnimationFrame(() => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+    document.getElementById('toTop').classList.toggle('show', window.scrollY > 500);
+    updateActiveLink();
 
-  const sb = document.getElementById('scrollBubble');
-  if (sb) sb.classList.toggle('hide', window.scrollY > 200);
+    const sb = document.getElementById('scrollBubble');
+    if (sb) sb.classList.toggle('hide', window.scrollY > 200);
+    scrollTicking = false;
+  });
 });
 
 burger.addEventListener('click', () => {
@@ -30,7 +38,7 @@ burger.addEventListener('click', () => {
   burgerIcon.className = open ? 'fas fa-times' : 'fas fa-bars';
 });
 
-document.querySelectorAll('.nav-link').forEach(link => {
+navLinks.forEach(link => {
   link.addEventListener('click', () => {
     navMenu.classList.remove('open');
     burgerIcon.className = 'fas fa-bars';
@@ -38,15 +46,14 @@ document.querySelectorAll('.nav-link').forEach(link => {
 });
 
 function updateActiveLink() {
-  const sections = document.querySelectorAll('section[id]');
   const scrollPos = window.scrollY + 150;
   sections.forEach(sec => {
     const top = sec.offsetTop;
     const bottom = top + sec.offsetHeight;
     const id = sec.getAttribute('id');
-    const link = document.querySelector(`.nav-link[href="#${id}"]`);
+    const link = navLinks.find(item => item.getAttribute('href') === `#${id}`);
     if (link && scrollPos >= top && scrollPos < bottom) {
-      document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+      navLinks.forEach(l => l.classList.remove('active'));
       link.classList.add('active');
     }
   });
@@ -128,13 +135,15 @@ document.querySelectorAll('[data-count]').forEach(el => counterObs.observe(el));
 /* ============================================================
    PROJECT SPOTLIGHT
    ============================================================ */
-document.querySelectorAll('.project').forEach(card => {
-  card.addEventListener('mousemove', e => {
-    const r = card.getBoundingClientRect();
-    card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
-    card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+  document.querySelectorAll('.project').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    });
   });
-});
+}
 
 /* ============================================================
    FORM VALIDATION
