@@ -86,16 +86,6 @@ Live URL:
 
 https://amnapervez8910.github.io/tsg-webdev-p01-amna-pervez/
 
-## Walkthrough Video
-
-A 60–90 second screen-recorded walkthrough is included in the final Google Drive submission folder.
-
-Suggested video filename:
-
-```text
-tsg-webdev-p01-amna-pervez-walkthrough.mp4
-```
-
 ## Credits
 
 - Fonts: [Google Fonts](https://fonts.google.com/)
