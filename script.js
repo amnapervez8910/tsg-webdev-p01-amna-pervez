@@ -169,7 +169,7 @@ form.addEventListener('submit', e => {
   if (ok) {
     const subject = encodeURIComponent(`Portfolio enquiry from ${name.value.trim()}`);
     const body = encodeURIComponent(`Name: ${name.value.trim()}\nEmail: ${email.value.trim()}\n\n${message.value.trim()}`);
-    const gmailUrl = 'https://mail.google.com/mail/?view=cm&fs=1&to=amnapervez8910@gmail.com&su=' + subject + '&body=' + body;
+    const gmailUrl = 'https://mail.google.com/mail/?view=cm&fs=1&to=amnapervez005@gmail.com&su=' + subject + '&body=' + body;
     success.classList.add('show');
     window.open(gmailUrl, '_blank', 'noopener');
     setTimeout(() => success.classList.remove('show'), 5000);
